@@ -7,3 +7,7 @@ click the extension icon and set your publicKey/privateKey/passPharse and save.
 ![screencut](screencut.png)   
 then you can goto a gpg encrypt armored file page in github repositpry to see if it would be decrypted.
 
+# what's more
+support .md/.cpp/.c/.h/.xml/.java/.cs/.js preview;
+support mxgraph xml preview(which need endswith .mxml);
+

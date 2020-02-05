@@ -11,3 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('isSymmetric').checked = localStorage.isSymmetric=="true";
 	document.querySelector('.button').addEventListener('click', saveToL);
 });
+//chrome.runtime.sendMessage({method: "getStatus"}, function(response) {
+//  console.log(response.status);
+//});
