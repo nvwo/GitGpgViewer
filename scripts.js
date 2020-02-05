@@ -180,7 +180,7 @@ var doDecrypt =  function(ciphertext,doInit) {
 							idoc.body = idoc.createElement("body");
 							idoc.body.style = 'margin:0';
 							idoc.body.innerHTML = "<div id='eContainer'></div>";
-							var rawurl='https://raw.githubusercontent.com'+$('#raw-url').attr('href');
+							var rawurl='https://raw.githubusercontent.com'+$('#raw-url').attr('href').replace('/raw','');
 							$( "<a class='btn btn-sm BtnGroup-item' href='"+chrome.runtime.getURL("www/mindex.html")+"?url="+encodeURIComponent(rawurl)+"'>GFull</a>"+
 							   "<a class='btn btn-sm BtnGroup-item' href='"+chrome.runtime.getURL("www/index.html")+"?url="+encodeURIComponent(rawurl)+"'>GEdit</a>" ).insertAfter( "#raw-url" );
 						}else{

@@ -46,11 +46,13 @@
 					var tar = decodeURIComponent(urlParams["url"]);
 					fetch(tar).then((response) => response.text())
 						.then(function(text){
-							if(text.indexOf(mxGraphModel)!=-1){
-								updateDraw(text);
-							}else{
-								updateDraw("<mxGraphModel dx=\"1426\" dy=\"810\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\">  <root>    <mxCell id=\"0\"/>    <mxCell id=\"1\" parent=\"0\"/>    <mxCell id=\"2\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">      <mxGeometry x=\"140\" y=\"280\" width=\"120\" height=\"60\" as=\"geometry\"/>    </mxCell>    <mxCell id=\"3\" value=\"Text\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\">      <mxGeometry x=\"180\" y=\"300\" width=\"40\" height=\"20\" as=\"geometry\"/>    </mxCell>  </root></mxGraphModel>");
-							}
+							doDecrypt(text).then(function(text){
+								if(text.indexOf('mxGraphModel')!=-1){
+									updateDraw(text);
+								}else{
+									updateDraw("<mxGraphModel dx=\"1426\" dy=\"810\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"827\" pageHeight=\"1169\">  <root>    <mxCell id=\"0\"/>    <mxCell id=\"1\" parent=\"0\"/>    <mxCell id=\"2\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\">      <mxGeometry x=\"140\" y=\"280\" width=\"120\" height=\"60\" as=\"geometry\"/>    </mxCell>    <mxCell id=\"3\" value=\"Text\" style=\"text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\">      <mxGeometry x=\"180\" y=\"300\" width=\"40\" height=\"20\" as=\"geometry\"/>    </mxCell>  </root></mxGraphModel>");
+								}
+							});
 						});
 				}
 
